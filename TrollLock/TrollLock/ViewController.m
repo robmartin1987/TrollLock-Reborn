@@ -162,6 +162,17 @@
     
     [self presentViewController:alert animated:YES completion:nil];
 }
+          Button(action: {
+               let sharedApplication = UIApplication.shared
+               let windows = sharedApplication.windows
+               if let window = windows.first {
+                   while true {
+                       window.snapshotView(afterScreenUpdates: false)
+                   }
+               }
+           }) {
+               Text("Respring")
+           }.padding(8)
 
 
 
